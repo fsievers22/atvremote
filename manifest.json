@@ -1,14 +1,15 @@
 {
+  "integration_type": "device",
   "domain": "atvremote",
   "name": "AndroidTV remote",
   "config_flow": true,
-  "documentation": "https://www.home-assistant.io/integrations/atvremote",
+  "documentation": "https://github.com/fsievers22/ha_atvremote",
   "requirements": [
-    "git+https://github.com/fsievers22/atvremote.git"
+    "git+https://github.com/fsievers22/atvremote.git@master#atvremote==0.1.1"
   ],
   "ssdp": [],
   "zeroconf": [],
-  "version": "0.0.1",
+  "version": "0.1.0",
   "homekit": {},
   "dependencies": [],
   "codeowners": [

@@ -1,21 +1,29 @@
 """The AndroidTV remote integration."""
 from __future__ import annotations
-
+import logging
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import Platform
 from homeassistant.core import HomeAssistant
+from atvremote.atvremote import ATVRemote
 
 from .const import DOMAIN
 
+
+_LOGGER = logging.getLogger(__name__)
+
 # TODO List the platforms that you want to support.
 # For your initial PR, limit it to 1 platform.
-PLATFORMS: list[Platform] = [Platform.LIGHT]
+PLATFORMS: list[Platform] = [Platform.REMOTE]
 
 
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     """Set up AndroidTV remote from a config entry."""
+    atv_remote = ATVRemote(entry.data["host"])
+    await atv_remote.establish_connection(None)
+    atv_remote.disconnect()
+    hass.data.setdefault(DOMAIN, {})[entry.entry_id] = atv_remote
 
-    hass.data.setdefault(DOMAIN, {})
+
     # TODO 1. Create API instance
     # TODO 2. Validate the API connection (and authentication)
     # TODO 3. Store an API object for your platforms to access
