@@ -9,7 +9,7 @@ import voluptuous as vol
 from homeassistant import config_entries
 from homeassistant.data_entry_flow import FlowResult
 from homeassistant.exceptions import HomeAssistantError
-from atvremote.atvremote import ATVRemote
+from py_atvremote.py_atvremote import ATVRemote
 
 from .const import DOMAIN
 

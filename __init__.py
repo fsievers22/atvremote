@@ -4,7 +4,7 @@ import logging
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import Platform
 from homeassistant.core import HomeAssistant
-from atvremote.atvremote import ATVRemote
+from py_atvremote.py_atvremote import ATVRemote
 
 from .const import DOMAIN
 

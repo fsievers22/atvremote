@@ -10,7 +10,7 @@ from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.entity import DeviceInfo
-from atvremote.atvremote import ATVRemote
+from py_atvremote.py_atvremote import ATVRemote
 from .const import DOMAIN
 
 
